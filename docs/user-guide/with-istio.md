@@ -251,7 +251,7 @@ metadata:
           redirect_cleartext_from: 80
         client:
           enabled: False
-        istio:
+        upstream:
           cert_chain_file: /etc/istiocerts/cert-chain.pem
           private_key_file: /etc/istiocerts/key.pem
 spec:
@@ -281,7 +281,7 @@ metadata:
       name: productpage_mapping
       prefix: /productpage/
       rewrite: /productpage
-      tls: istio
+      tls: upstream
       service: productpage:9080
 spec:
   ports:
